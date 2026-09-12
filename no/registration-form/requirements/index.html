@@ -23,6 +23,59 @@
       </section>
     </header>
 
+    <section class="content">
+      <h2>Registreringstyper</h2>
+      <p>Applikasjonen må støtte to registreringstyper, hver med sin egen videre prosess: <strong>leverandørregistrering</strong> og <strong>kunderegistrering</strong>.</p>
+
+      <h2>Prosesskrav</h2>
+      <ol>
+        <li>Ventistål må kunne opprette en registreringsforespørsel ved å oppgi motpartens e-postadresse og registreringstype (kunde eller leverandør).</li>
+        <li>Systemet må sende motparten en invitasjon på e-post med en sikker lenke til registreringsskjemaet.</li>
+        <li>Motparten må kunne fylle ut nødvendig informasjon via lenken.</li>
+        <li>Motparten må kunne gjennomgå informasjonen før den sendes inn.</li>
+        <li>Den innsendte informasjonen må sendes til Ventistål for behandling ut fra registreringstype.</li>
+        <li>Prosessen må gi tilstrekkelig status og sporbarhet i hvert steg.</li>
+      </ol>
+
+      <h2>Datakrav</h2>
+      <h3>Leverandør</h3>
+      <ul>
+        <li>Selskapsinformasjon</li>
+        <li>Kontaktinformasjon</li>
+        <li>Registrerings-/MVA-informasjon</li>
+        <li>Bank-/betalingsinformasjon</li>
+        <li>Nødvendige erklæringer/dokumenter</li>
+      </ul>
+      <h3>Kunde</h3>
+      <ul>
+        <li>Selskapsinformasjon</li>
+        <li>Kontaktinformasjon</li>
+        <li>Registrerings-/MVA-informasjon</li>
+        <li>Annen informasjon som er nødvendig for å avgjøre om kunden er gyldig</li>
+      </ul>
+
+      <h2>Ikke-funksjonelle krav</h2>
+      <ul>
+        <li>Invitasjonslenken må være unik for registreringsforespørselen og kun brukbar én gang, eller bli ugyldig etter vellykket innsending.</li>
+        <li>Lenken må utløpe etter en definert periode.</li>
+        <li>Lenken må ikke eksponere sensitiv informasjon i URL-en.</li>
+        <li>Etter innsending må registreringen bli skrivebeskyttet for motparten.</li>
+        <li>Motparten må få en bekreftelse etter innsending.</li>
+      </ul>
+
+      <div class="callout">
+        <h3>Åpne spørsmål</h3>
+        <ul>
+          <li>Bør den ansatte også oppgi selskapsnavn, organisasjonsnummer, kontaktperson eller annen initiell informasjon ved opprettelse av forespørselen?</li>
+          <li>Hvor lenge bør invitasjonslenken være gyldig, og hva skjer når den utløper?</li>
+          <li>Kan Ventistål sende invitasjonen på nytt, og gjør det den forrige lenken ugyldig?</li>
+          <li>Kan motparten lagre skjemaet og fortsette senere?</li>
+          <li>Hva skjer hvis e-postadressen ble feil registrert?</li>
+          <li>Bør motparten motta en bekreftelses-e-post etter innsending?</li>
+        </ul>
+      </div>
+    </section>
+
     <div data-footer data-label="Ventistål · Registreringsskjema · Krav"></div>
   </main>
 <script src="/shared/js/footer.js" defer></script>

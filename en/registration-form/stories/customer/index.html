@@ -23,6 +23,45 @@
       </section>
     </header>
 
+    <section class="content">
+      <h2>Main story</h2>
+      <p>As a Ventistål employee, I want to request customer information from an external stakeholder through a controlled digital process, so that the stakeholder can provide their own information and Ventistål can subsequently validate and register it in the appropriate internal systems.</p>
+
+      <h2>Customer stories</h2>
+      <ul>
+        <li>As a customer, I want to receive a secure, single-use link so that I can submit my company's information without going through a Ventistål employee.</li>
+        <li>As a customer, I want to review my information before submitting it, so that I can correct any mistakes.</li>
+        <li>As a customer, I want confirmation once I have submitted the registration, so that I know Ventistål has received it.</li>
+        <li>As a customer whose registration requires correction, I want to receive a new secure link, so that I can update only the information Ventistål has flagged.</li>
+      </ul>
+
+      <h2>Information collected</h2>
+      <ul>
+        <li>Company information</li>
+        <li>Contact information</li>
+        <li>Registration/VAT information</li>
+        <li>Other information required to determine whether the customer is valid</li>
+      </ul>
+
+      <h2>Customer validation workflow</h2>
+      <div class="diagram">Submitted
+   │
+   ▼
+Customer validation
+   │
+   ├── Invalid → Rejected
+   │
+   └── Valid
+        │
+        ▼
+Registered in internal systems</div>
+
+      <div class="callout">
+        <h3>Open question</h3>
+        <p>What exactly constitutes a "valid customer"? This needs to be defined as a business rule rather than assumed.</p>
+      </div>
+    </section>
+
     <section class="grid" aria-label="Related">
       <a class="card" href="../supplier/index.html" aria-label="Go to Supplier Stories">
         <div>

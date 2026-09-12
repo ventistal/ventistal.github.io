@@ -23,6 +23,45 @@
       </section>
     </header>
 
+    <section class="content">
+      <h2>Hovedhistorie</h2>
+      <p>Som Ventistål-ansatt ønsker jeg å be en ekstern motpart om kundeinformasjon gjennom en kontrollert digital prosess, slik at motparten kan oppgi sin egen informasjon og Ventistål deretter kan validere og registrere den i de relevante interne systemene.</p>
+
+      <h2>Kundehistorier</h2>
+      <ul>
+        <li>Som kunde ønsker jeg å motta en sikker engangslenke, slik at jeg kan sende inn selskapets informasjon uten å gå via en Ventistål-ansatt.</li>
+        <li>Som kunde ønsker jeg å kunne gjennomgå informasjonen min før jeg sender den inn, slik at jeg kan rette eventuelle feil.</li>
+        <li>Som kunde ønsker jeg en bekreftelse når jeg har sendt inn registreringen, slik at jeg vet at Ventistål har mottatt den.</li>
+        <li>Som kunde hvis registrering krever korrigering, ønsker jeg å motta en ny sikker lenke, slik at jeg kun kan oppdatere informasjonen Ventistål har markert.</li>
+      </ul>
+
+      <h2>Informasjon som samles inn</h2>
+      <ul>
+        <li>Selskapsinformasjon</li>
+        <li>Kontaktinformasjon</li>
+        <li>Registrerings-/MVA-informasjon</li>
+        <li>Annen informasjon som er nødvendig for å avgjøre om kunden er gyldig</li>
+      </ul>
+
+      <h2>Kundevalideringsflyt</h2>
+      <div class="diagram">Innsendt
+   │
+   ▼
+Kundevalidering
+   │
+   ├── Ugyldig → Avvist
+   │
+   └── Gyldig
+        │
+        ▼
+Registrert i interne systemer</div>
+
+      <div class="callout">
+        <h3>Åpent spørsmål</h3>
+        <p>Hva innebærer det egentlig at en kunde er «gyldig»? Dette må defineres som en forretningsregel, ikke antas.</p>
+      </div>
+    </section>
+
     <section class="grid" aria-label="Relatert">
       <a class="card" href="../supplier/index.html" aria-label="Gå til leverandørhistorier">
         <div>

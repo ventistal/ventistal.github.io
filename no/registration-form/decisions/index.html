@@ -23,6 +23,50 @@
       </section>
     </header>
 
+    <section class="content">
+      <h2>Besluttet</h2>
+      <ul>
+        <li>Ansvaret for å oppgi korrekt informasjon flyttes fra Ventiståls ansatte til kunden eller leverandøren selv; Ventistål beholder kontrollen over validering og endelig registrering.</li>
+        <li>Applikasjonen støtter nøyaktig to registreringstyper — <strong>leverandør</strong> og <strong>kunde</strong> — hvor prosessen skiller seg fra hverandre etter innsending.</li>
+        <li>Motparten får tilgang til skjemaet via en sikker engangslenke i stedet for innlogging/konto.</li>
+        <li>Kunderegistreringer krever et eksplisitt valideringssteg før intern registrering; leverandørregistreringer går direkte fra gjennomgang til registrering.</li>
+        <li>Korrigeringer håndteres ved å sende motparten en ny sikker lenke, i stedet for at en Ventistål-ansatt redigerer den innsendte dataen manuelt.</li>
+        <li>For MVP-en skal ingen status legges til med mindre den representerer en reell forretningstilstand (se <a href="../workflows/index.html">statuslisten</a>).</li>
+        <li>BankID, e-signering, integrasjoner og spesifikk autentiseringsteknologi spesifiseres eksplisitt <strong>ikke</strong> ennå — dette utsettes til senere.</li>
+      </ul>
+
+      <h2>Utestående forretningsbeslutninger</h2>
+      <p>Før denne historien kan bli en detaljert spesifikasjon, må Ventistål avklare:</p>
+      <ol>
+        <li>Hvilke data kreves nøyaktig for leverandører?</li>
+        <li>Hvilke data kreves nøyaktig for kunder?</li>
+        <li>Hva gjør en kunde «gyldig»?</li>
+        <li>Hvem utfører kundevalideringen?</li>
+        <li>Hva skjer etter validering?</li>
+        <li>Hvilke interne systemer skal motta dataene?</li>
+        <li>Kreves integrasjon, eller er manuell registrering akseptabelt for MVP-en?</li>
+        <li>Hva skjer når informasjonen er feil?</li>
+        <li>Kan motparten lagre et ufullstendig skjema?</li>
+        <li>Hvor lenge er invitasjonslenker gyldige?</li>
+        <li>Hvordan etableres motpartens identitet/tillit?</li>
+        <li>Hvordan skal bankinformasjon håndteres?</li>
+        <li>Hvilke varsler/e-poster kreves?</li>
+        <li>Hvordan håndteres dupliserte kunder/leverandører?</li>
+        <li>Hvilken informasjon må Ventistål oppbevare for revisjonsformål?</li>
+      </ol>
+
+      <div class="callout">
+        <h3>Gjenstående risikoer</h3>
+        <ul>
+          <li><strong>Motpartens identitet</strong> — hvor mye tillit legger Ventistål i det å besitte e-postlenken alene, spesielt for sensitiv informasjon som bankopplysninger?</li>
+          <li><strong>Dupliserte registreringer</strong> — hvilken identifikator (f.eks. organisasjonsnummer) bør brukes for å oppdage en eksisterende registrering for samme selskap?</li>
+          <li><strong>Utløpte lenker</strong> — systemet bør la motparten be om en ny invitasjon uten at en ansatt må gjenskape hele forespørselen.</li>
+          <li><strong>Feil e-postadresse</strong> — en mottaker bør ikke kunne overføre en sensitiv registrering til en annen person uten en egnet mekanisme.</li>
+          <li><strong>Forlatte registreringer</strong> — Ventistål bør kunne identifisere forespørsler som ble åpnet, men aldri sendt inn, og avgjøre om det skal sendes påminnelser.</li>
+        </ul>
+      </div>
+    </section>
+
     <div data-footer data-label="Ventistål · Registreringsskjema · Beslutninger"></div>
   </main>
 <script src="/shared/js/footer.js" defer></script>

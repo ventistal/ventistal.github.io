@@ -23,6 +23,67 @@
       </section>
     </header>
 
+    <section class="content">
+      <h3 class="tc-group">Request creation</h3>
+      <table class="tc-table">
+        <thead><tr><th>ID</th><th>Given</th><th>When</th><th>Then</th></tr></thead>
+        <tbody>
+          <tr><td>TC-01</td><td>A Ventistål employee is creating a registration request</td><td>They enter a valid email and select Supplier</td><td>A supplier registration request is created and an invitation is sent</td></tr>
+          <tr><td>TC-02</td><td>Same scenario</td><td>They select Customer instead</td><td>A customer registration request is created and an invitation is sent</td></tr>
+          <tr><td>TC-03</td><td>Employee enters an invalid email</td><td>They attempt to create the request</td><td>The request cannot be submitted</td></tr>
+          <tr><td>TC-04</td><td>Employee has entered an email</td><td>They don't select Customer/Supplier</td><td>The request cannot be created</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="tc-group">Invitation</h3>
+      <table class="tc-table">
+        <thead><tr><th>ID</th><th>Given</th><th>When</th><th>Then</th></tr></thead>
+        <tbody>
+          <tr><td>TC-05</td><td>A valid registration request exists</td><td>The stakeholder opens the invitation</td><td>The correct registration form is displayed</td></tr>
+          <tr><td>TC-06</td><td>The invitation has expired</td><td>The stakeholder opens the link</td><td>The form cannot be accessed and an appropriate message is displayed</td></tr>
+          <tr><td>TC-07</td><td>The stakeholder has already submitted the form</td><td>They access the same link again</td><td>They cannot submit the registration again</td></tr>
+          <tr><td>TC-08</td><td>The URL does not correspond to a valid registration</td><td>The stakeholder accesses it</td><td>Access is denied</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="tc-group">Form</h3>
+      <table class="tc-table">
+        <thead><tr><th>ID</th><th>Given</th><th>When</th><th>Then</th></tr></thead>
+        <tbody>
+          <tr><td>TC-09</td><td>The stakeholder has opened the form</td><td>They submit without completing mandatory fields</td><td>Submission is rejected and the missing information is identified</td></tr>
+          <tr><td>TC-10</td><td>Invalid data is entered (e.g. invalid VAT/organisation number, malformed email, invalid banking information)</td><td>The stakeholder attempts to submit</td><td>The system prevents submission where validation rules are defined</td></tr>
+          <tr><td>TC-11</td><td>The stakeholder has completed the form</td><td>They reach the review step</td><td>They can review the complete information before confirming submission</td></tr>
+          <tr><td>TC-12</td><td>All required information is valid</td><td>The stakeholder confirms submission</td><td>The registration is submitted to Ventistål and cannot be modified through the original invitation</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="tc-group">Customer-specific</h3>
+      <table class="tc-table">
+        <thead><tr><th>ID</th><th>Given</th><th>When</th><th>Then</th></tr></thead>
+        <tbody>
+          <tr><td>TC-13</td><td>A customer registration has been submitted</td><td>Ventistål validates it successfully</td><td>The customer can proceed to internal registration</td></tr>
+          <tr><td>TC-14</td><td>A customer registration has been submitted</td><td>Validation fails</td><td>The customer cannot be registered in the internal systems</td></tr>
+          <tr><td>TC-15</td><td>Ventistål identifies incorrect information</td><td>Correction is requested</td><td>The stakeholder can update the required information and resubmit</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="tc-group">Supplier-specific</h3>
+      <table class="tc-table">
+        <thead><tr><th>ID</th><th>Given</th><th>When</th><th>Then</th></tr></thead>
+        <tbody>
+          <tr><td>TC-16</td><td>A supplier registration has been submitted and reviewed</td><td>Ventistål accepts it</td><td>The supplier can be registered in the internal system</td></tr>
+          <tr><td>TC-17</td><td>Supplier information is incomplete/incorrect</td><td>Ventistål requests correction</td><td>The supplier can update and resubmit the information</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="tc-group">Traceability / audit</h3>
+      <ul>
+        <li><strong>TC-18 — Registration history:</strong> the system must let Ventistål determine who created the request, when, which email it was sent to, when it was opened, when information was submitted, who reviewed it, what decision was made, and when it was registered/rejected/returned.</li>
+        <li><strong>TC-19 — Submitted data:</strong> Ventistål must be able to identify exactly which information was submitted by the stakeholder.</li>
+        <li><strong>TC-20 — Correction history:</strong> if information is corrected, Ventistål must be able to distinguish the latest information from previous submissions where required for traceability.</li>
+      </ul>
+    </section>
+
     <div data-footer data-label="Ventistål · Registration Form · Test Cases"></div>
   </main>
 <script src="/shared/js/footer.js" defer></script>

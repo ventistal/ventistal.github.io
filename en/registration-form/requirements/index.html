@@ -23,6 +23,59 @@
       </section>
     </header>
 
+    <section class="content">
+      <h2>Registration types</h2>
+      <p>The application must support two registration types, each with its own downstream process: <strong>Supplier registration</strong> and <strong>Customer registration</strong>.</p>
+
+      <h2>Process requirements</h2>
+      <ol>
+        <li>Ventistål must be able to initiate a registration request by providing the stakeholder's email address and the registration type (Customer or Supplier).</li>
+        <li>The system must send the stakeholder an invitation email containing a secure link to the registration form.</li>
+        <li>The stakeholder must be able to enter the required information through that link.</li>
+        <li>The stakeholder must be able to review the information before submitting it.</li>
+        <li>The submitted information must be sent back to Ventistål for processing according to its registration type.</li>
+        <li>The process must provide sufficient status and traceability at every step.</li>
+      </ol>
+
+      <h2>Data requirements</h2>
+      <h3>Supplier</h3>
+      <ul>
+        <li>Company information</li>
+        <li>Contact information</li>
+        <li>Registration/VAT information</li>
+        <li>Banking/payment information</li>
+        <li>Required declarations/documents</li>
+      </ul>
+      <h3>Customer</h3>
+      <ul>
+        <li>Company information</li>
+        <li>Contact information</li>
+        <li>Registration/VAT information</li>
+        <li>Other information required to determine whether the customer is valid</li>
+      </ul>
+
+      <h2>Non-functional requirements</h2>
+      <ul>
+        <li>The invitation link must be unique to the registration request and usable only once, or become unusable after successful submission.</li>
+        <li>The link must expire after a defined period.</li>
+        <li>The link must not expose sensitive information through the URL.</li>
+        <li>Once submitted, the registration must become read-only for the stakeholder.</li>
+        <li>A confirmation must be shown to the stakeholder after submission.</li>
+      </ul>
+
+      <div class="callout">
+        <h3>Open questions</h3>
+        <ul>
+          <li>Should the employee also provide the company name, organisation number, contact person or other initial information when creating the request?</li>
+          <li>How long should the invitation link remain valid, and what happens when it expires?</li>
+          <li>Can Ventistål resend the invitation, and does resending invalidate the previous link?</li>
+          <li>Can the stakeholder save the form and continue later?</li>
+          <li>What happens if the email address was entered incorrectly?</li>
+          <li>Should the stakeholder receive a confirmation email after submission?</li>
+        </ul>
+      </div>
+    </section>
+
     <div data-footer data-label="Ventistål · Registration Form · Requirements"></div>
   </main>
 <script src="/shared/js/footer.js" defer></script>

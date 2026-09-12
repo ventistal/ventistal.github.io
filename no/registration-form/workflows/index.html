@@ -23,6 +23,71 @@
       </section>
     </header>
 
+    <section class="content">
+      <h2>Hovedarbeidsflyt</h2>
+      <ol>
+        <li><strong>Opprett registreringsforespørsel</strong> — en Ventistål-ansatt oppretter en forespørsel med motpartens e-post og registreringstype (kunde eller leverandør).</li>
+        <li><strong>Send invitasjon</strong> — motparten mottar en e-post med en sikker engangslenke til registreringsskjemaet.</li>
+        <li><strong>Motparten fyller ut skjemaet</strong> — motparten registrerer og gjennomgår nødvendig informasjon.</li>
+        <li><strong>Send inn registrering</strong> — motparten bekrefter og sender inn; registreringen blir skrivebeskyttet og Ventistål varsles.</li>
+      </ol>
+
+      <h2>Ventiståls behandling</h2>
+      <h3>Leverandør</h3>
+      <div class="diagram">Innsendt → Gjennomgått → Registrert i Ventiståls systemer</div>
+      <p>Ved godkjenning legges leverandørinformasjonen inn i/integreres med de relevante interne systemene.</p>
+
+      <h3>Kunde</h3>
+      <div class="diagram">Innsendt
+   │
+   ▼
+Kundevalidering
+   │
+   ├── Ugyldig → Avvist
+   │
+   └── Gyldig
+        │
+        ▼
+Registrert i interne systemer</div>
+      <p>Kunder krever et ekstra valideringssteg før de kan registreres internt.</p>
+
+      <h2>Korrigeringsflyt</h2>
+      <div class="diagram">Innsendt
+   │
+   ▼
+Ventistål gjennomgår
+   │
+   ▼
+Korrigering nødvendig
+   │
+   ▼
+Motparten mottar ny lenke
+   │
+   ▼
+Oppdaterer informasjon
+   │
+   ▼
+Sender inn på nytt</div>
+
+      <h2>Mulige statuser</h2>
+      <table class="tc-table">
+        <thead>
+          <tr><th>Status</th><th>Betydning</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>REQUESTED</code></td><td>Ventistål har opprettet forespørselen</td></tr>
+          <tr><td><code>SENT</code></td><td>Invitasjonen er sendt</td></tr>
+          <tr><td><code>IN_PROGRESS</code></td><td>Motparten har åpnet/startet skjemaet</td></tr>
+          <tr><td><code>SUBMITTED</code></td><td>Motparten har sendt inn informasjonen</td></tr>
+          <tr><td><code>UNDER_REVIEW</code></td><td>Ventistål gjennomgår innsendingen</td></tr>
+          <tr><td><code>CORRECTION_REQUIRED</code></td><td>Ventistål trenger ytterligere/korrigert informasjon</td></tr>
+          <tr><td><code>VALIDATED</code></td><td>Kundevalidering er godkjent</td></tr>
+          <tr><td><code>REJECTED</code></td><td>Registreringen er avvist</td></tr>
+          <tr><td><code>REGISTERED</code></td><td>Vellykket registrert i Ventiståls interne system</td></tr>
+        </tbody>
+      </table>
+    </section>
+
     <div data-footer data-label="Ventistål · Registreringsskjema · Arbeidsflyter"></div>
   </main>
 <script src="/shared/js/footer.js" defer></script>

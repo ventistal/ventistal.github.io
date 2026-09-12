@@ -23,6 +23,67 @@
       </section>
     </header>
 
+    <section class="content">
+      <h3 class="tc-group">Opprettelse av forespørsel</h3>
+      <table class="tc-table">
+        <thead><tr><th>ID</th><th>Gitt</th><th>Når</th><th>Så</th></tr></thead>
+        <tbody>
+          <tr><td>TC-01</td><td>En Ventistål-ansatt oppretter en registreringsforespørsel</td><td>De oppgir en gyldig e-post og velger Leverandør</td><td>En leverandørforespørsel opprettes og en invitasjon sendes</td></tr>
+          <tr><td>TC-02</td><td>Samme scenario</td><td>De velger Kunde i stedet</td><td>En kundeforespørsel opprettes og en invitasjon sendes</td></tr>
+          <tr><td>TC-03</td><td>Den ansatte oppgir en ugyldig e-post</td><td>De forsøker å opprette forespørselen</td><td>Forespørselen kan ikke sendes inn</td></tr>
+          <tr><td>TC-04</td><td>Den ansatte har oppgitt en e-post</td><td>De velger ikke Kunde/Leverandør</td><td>Forespørselen kan ikke opprettes</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="tc-group">Invitasjon</h3>
+      <table class="tc-table">
+        <thead><tr><th>ID</th><th>Gitt</th><th>Når</th><th>Så</th></tr></thead>
+        <tbody>
+          <tr><td>TC-05</td><td>En gyldig registreringsforespørsel finnes</td><td>Motparten åpner invitasjonen</td><td>Riktig registreringsskjema vises</td></tr>
+          <tr><td>TC-06</td><td>Invitasjonen har utløpt</td><td>Motparten åpner lenken</td><td>Skjemaet kan ikke åpnes og en passende melding vises</td></tr>
+          <tr><td>TC-07</td><td>Motparten har allerede sendt inn skjemaet</td><td>De åpner samme lenke igjen</td><td>De kan ikke sende inn registreringen på nytt</td></tr>
+          <tr><td>TC-08</td><td>URL-en samsvarer ikke med en gyldig registrering</td><td>Motparten åpner den</td><td>Tilgang nektes</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="tc-group">Skjema</h3>
+      <table class="tc-table">
+        <thead><tr><th>ID</th><th>Gitt</th><th>Når</th><th>Så</th></tr></thead>
+        <tbody>
+          <tr><td>TC-09</td><td>Motparten har åpnet skjemaet</td><td>De sender inn uten å fylle ut obligatoriske felt</td><td>Innsending avvises og manglende informasjon identifiseres</td></tr>
+          <tr><td>TC-10</td><td>Ugyldig data oppgis (f.eks. ugyldig MVA-/organisasjonsnummer, feilformatert e-post, ugyldig bankinformasjon)</td><td>Motparten forsøker å sende inn</td><td>Systemet forhindrer innsending der valideringsregler er definert</td></tr>
+          <tr><td>TC-11</td><td>Motparten har fylt ut skjemaet</td><td>De når gjennomgangssteget</td><td>De kan gjennomgå all informasjon før innsending bekreftes</td></tr>
+          <tr><td>TC-12</td><td>All nødvendig informasjon er gyldig</td><td>Motparten bekrefter innsending</td><td>Registreringen sendes til Ventistål og kan ikke endres via den opprinnelige invitasjonen</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="tc-group">Kundespesifikke</h3>
+      <table class="tc-table">
+        <thead><tr><th>ID</th><th>Gitt</th><th>Når</th><th>Så</th></tr></thead>
+        <tbody>
+          <tr><td>TC-13</td><td>En kunderegistrering er sendt inn</td><td>Ventistål validerer den uten problemer</td><td>Kunden kan gå videre til intern registrering</td></tr>
+          <tr><td>TC-14</td><td>En kunderegistrering er sendt inn</td><td>Valideringen feiler</td><td>Kunden kan ikke registreres i de interne systemene</td></tr>
+          <tr><td>TC-15</td><td>Ventistål oppdager feil informasjon</td><td>Korrigering blir bedt om</td><td>Motparten kan oppdatere nødvendig informasjon og sende inn på nytt</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="tc-group">Leverandørspesifikke</h3>
+      <table class="tc-table">
+        <thead><tr><th>ID</th><th>Gitt</th><th>Når</th><th>Så</th></tr></thead>
+        <tbody>
+          <tr><td>TC-16</td><td>En leverandørregistrering er sendt inn og gjennomgått</td><td>Ventistål godkjenner den</td><td>Leverandøren kan registreres i det interne systemet</td></tr>
+          <tr><td>TC-17</td><td>Leverandørinformasjonen er ufullstendig/feil</td><td>Ventistål ber om korrigering</td><td>Leverandøren kan oppdatere og sende inn informasjonen på nytt</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="tc-group">Sporbarhet / revisjon</h3>
+      <ul>
+        <li><strong>TC-18 — Registreringshistorikk:</strong> systemet må la Ventistål se hvem som opprettet forespørselen, når, hvilken e-post den ble sendt til, når den ble åpnet, når informasjon ble sendt inn, hvem som gjennomgikk den, hvilken beslutning som ble tatt, og når den ble registrert/avvist/returnert.</li>
+        <li><strong>TC-19 — Innsendt data:</strong> Ventistål må kunne identifisere nøyaktig hvilken informasjon motparten sendte inn.</li>
+        <li><strong>TC-20 — Korrigeringshistorikk:</strong> hvis informasjon korrigeres, må Ventistål kunne skille den nyeste informasjonen fra tidligere innsendinger der det er nødvendig for sporbarhet.</li>
+      </ul>
+    </section>
+
     <div data-footer data-label="Ventistål · Registreringsskjema · Testtilfeller"></div>
   </main>
 <script src="/shared/js/footer.js" defer></script>

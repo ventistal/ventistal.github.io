@@ -23,6 +23,71 @@
       </section>
     </header>
 
+    <section class="content">
+      <h2>Main workflow</h2>
+      <ol>
+        <li><strong>Create registration request</strong> — a Ventistål employee creates a request with the stakeholder's email and registration type (Customer or Supplier).</li>
+        <li><strong>Send invitation</strong> — the stakeholder receives an email with a secure, single-use link to the registration form.</li>
+        <li><strong>Stakeholder completes the form</strong> — the stakeholder enters and reviews the required information.</li>
+        <li><strong>Submit registration</strong> — the stakeholder confirms and submits; the registration becomes read-only and Ventistål is notified.</li>
+      </ol>
+
+      <h2>Ventistål processing</h2>
+      <h3>Supplier</h3>
+      <div class="diagram">Submitted → Reviewed → Registered in Ventistål systems</div>
+      <p>If accepted, the supplier information is entered/integrated into the relevant internal systems.</p>
+
+      <h3>Customer</h3>
+      <div class="diagram">Submitted
+   │
+   ▼
+Customer validation
+   │
+   ├── Invalid → Rejected
+   │
+   └── Valid
+        │
+        ▼
+Registered in internal systems</div>
+      <p>Customers require an additional validation step before they can be registered internally.</p>
+
+      <h2>Correction workflow</h2>
+      <div class="diagram">Submitted
+   │
+   ▼
+Ventistål review
+   │
+   ▼
+Correction required
+   │
+   ▼
+Stakeholder receives new link
+   │
+   ▼
+Updates information
+   │
+   ▼
+Resubmits</div>
+
+      <h2>Possible statuses</h2>
+      <table class="tc-table">
+        <thead>
+          <tr><th>Status</th><th>Meaning</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>REQUESTED</code></td><td>Ventistål has created the request</td></tr>
+          <tr><td><code>SENT</code></td><td>Invitation has been sent</td></tr>
+          <tr><td><code>IN_PROGRESS</code></td><td>Stakeholder has opened/started the form</td></tr>
+          <tr><td><code>SUBMITTED</code></td><td>Stakeholder has submitted the information</td></tr>
+          <tr><td><code>UNDER_REVIEW</code></td><td>Ventistål is reviewing the submission</td></tr>
+          <tr><td><code>CORRECTION_REQUIRED</code></td><td>Ventistål needs additional/corrected information</td></tr>
+          <tr><td><code>VALIDATED</code></td><td>Customer validation has succeeded</td></tr>
+          <tr><td><code>REJECTED</code></td><td>Registration has been rejected</td></tr>
+          <tr><td><code>REGISTERED</code></td><td>Successfully registered in Ventistål's internal system</td></tr>
+        </tbody>
+      </table>
+    </section>
+
     <div data-footer data-label="Ventistål · Registration Form · Workflows"></div>
   </main>
 <script src="/shared/js/footer.js" defer></script>

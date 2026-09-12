@@ -23,6 +23,50 @@
       </section>
     </header>
 
+    <section class="content">
+      <h2>Decided</h2>
+      <ul>
+        <li>Responsibility for providing accurate information moves from Ventistål employees to the customer or supplier themselves; Ventistål retains control over validation and final registration.</li>
+        <li>The application supports exactly two registration types — <strong>Supplier</strong> and <strong>Customer</strong> — with the process differing between them after submission.</li>
+        <li>Stakeholders access the form through a secure, single-use link rather than a login/account.</li>
+        <li>Customer registrations require an explicit validation step before they can be registered internally; supplier registrations go straight from review to registration.</li>
+        <li>Corrections are handled by sending the stakeholder a new secure link rather than having a Ventistål employee edit the submitted data manually.</li>
+        <li>For the MVP, no status should be added unless it corresponds to a real business state (see the <a href="../workflows/index.html">status list</a>).</li>
+        <li>BankID, e-signatures, integrations and specific authentication technology are explicitly <strong>not</strong> being specified yet — they are deferred beyond this story.</li>
+      </ul>
+
+      <h2>Pending business decisions</h2>
+      <p>Before this story can become a detailed specification, Ventistål needs to clarify:</p>
+      <ol>
+        <li>What exact data is required for suppliers?</li>
+        <li>What exact data is required for customers?</li>
+        <li>What makes a customer "valid"?</li>
+        <li>Who performs the customer validation?</li>
+        <li>What happens after validation?</li>
+        <li>Which internal systems must receive the data?</li>
+        <li>Is integration required, or is manual registration acceptable for the MVP?</li>
+        <li>What happens when information is incorrect?</li>
+        <li>Can stakeholders save an incomplete form?</li>
+        <li>How long are invitation links valid?</li>
+        <li>How is the stakeholder's identity/trust established?</li>
+        <li>How should banking information be handled?</li>
+        <li>What notifications/emails are required?</li>
+        <li>How are duplicate customers/suppliers handled?</li>
+        <li>What information must Ventistål retain for audit purposes?</li>
+      </ol>
+
+      <div class="callout">
+        <h3>Risks still to resolve</h3>
+        <ul>
+          <li><strong>Identity of the stakeholder</strong> — how much trust does Ventistål place in mere possession of the email link, especially for sensitive data such as banking details?</li>
+          <li><strong>Duplicate registrations</strong> — which identifier (e.g. organisation number) should be used to detect an existing registration for the same company?</li>
+          <li><strong>Expired links</strong> — the system should let a stakeholder request a new invitation without an employee having to recreate the whole request.</li>
+          <li><strong>Wrong email address</strong> — a recipient should not be able to transfer a sensitive registration to another person without an appropriate mechanism.</li>
+          <li><strong>Abandoned registrations</strong> — Ventistål should be able to identify requests that were opened but never submitted, and decide whether reminders are sent.</li>
+        </ul>
+      </div>
+    </section>
+
     <div data-footer data-label="Ventistål · Registration Form · Decisions"></div>
   </main>
 <script src="/shared/js/footer.js" defer></script>
